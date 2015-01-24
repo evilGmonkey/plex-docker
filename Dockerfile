@@ -5,7 +5,12 @@
 
 FROM		uhurunet/fedora21
 MAINTAINER	Frederick Mbuya "freddie@uhurunet.com"
-
+ENV PLEX_MEDIA_SERVER_APPLICATION_SUPPORT_DIR="/var/lib/plexmediaserver/Library/Application Support"
+ENV PLEX_MEDIA_SERVER_HOME=/usr/lib/plexmediaserver
+ENV PLEX_MEDIA_SERVER_MAX_PLUGIN_PROCS=6
+ENV PLEX_MEDIA_SERVER_TMPDIR=/tmp
+ENV LD_LIBRARY_PATH=/usr/lib/plexmediaserver
+ENV LC_ALL=en_US.UTF-8
 RUN		yum -y update
 ADD		plexaa /tmp/plexaa
 ADD		plexab /tmp/plexab
