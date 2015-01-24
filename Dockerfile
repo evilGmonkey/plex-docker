@@ -9,12 +9,13 @@ ENV PLEX_MEDIA_SERVER_APPLICATION_SUPPORT_DIR="/var/lib/plexmediaserver/Library/
 ENV PLEX_MEDIA_SERVER_HOME=/usr/lib/plexmediaserver
 ENV PLEX_MEDIA_SERVER_MAX_PLUGIN_PROCS=6
 ENV PLEX_MEDIA_SERVER_TMPDIR=/tmp
-ENV LD_LIBRARY_PATH=/usr/lib/plexmediaserver
-ENV LC_ALL=en_US.UTF-8
+#ENV LC_ALL=en_US.UTF-8
 RUN		yum -y update
 ADD		plexaa /tmp/plexaa
 ADD		plexab /tmp/plexab
 ADD		plexac /tmp/plexac
+ADD		plex-ld.conf /etc/ld.so.conf.d/plex-ld.conf
+RUN		/usr/sbin/ldconfig -v
 RUN		cat /tmp/plexa* > /tmp/plexmediaserver-0.9.11.7.803-87d0708.x86_64.rpm
 RUN		yum -y install /tmp/plexmediaserver-0.9.11.7.803-87d0708.x86_64.rpm
 ADD 		supervisord.conf /etc/supervisord.conf
