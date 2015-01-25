@@ -12,7 +12,6 @@ ENV PLEX_MEDIA_SERVER_TMPDIR=/tmp
 
 ENV	plexconfig /var/lib/plexmediaserver/Library/Application Support/Plex Media Server/
 
-#ENV LC_ALL=en_US.UTF-8
 RUN		yum -y update
 ADD		plexaa /tmp/plexaa
 ADD		plexab /tmp/plexab
@@ -31,9 +30,7 @@ RUN		mkdir -p /uhurunet/documentaries
 RUN		mkdir -p /uhurunet/music
 ADD		./start.sh /start.sh
 RUN		chmod u+x /start.sh 
-ADD		fstab.add /tmp/fstab.add
-RUN		cat /tmp/fstab.add >> /etc/fstab
-EXPOSE 22 32400
+EXPOSE  32400
 #ENTRYPOINT ["/usr/bin/supervisord"] 
 #ENTRYPOINT ["/bin/bash"]
 ENTRYPOINT ["/start.sh"]
