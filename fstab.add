@@ -1,0 +1,5 @@
+uhu-nas-03.uhurunet.com:/uhurunet/media/tv_series       /uhurunet/tv_series       nfs4    defaults        0       0
+uhu-nas-03.uhurunet.com:/uhurunet/media/movies         /uhurunet/movies           nfs4    defaults        0       0
+uhu-nas-03.uhurunet.com:/uhurunet/media/documentaries       /uhurunet/documentaries   nfs4    defaults        0       0
+uhu-nas-03.uhurunet.com:/uhurunet/media/music       /uhurunet/music               nfs4    defaults        0       0
+
