@@ -19,7 +19,8 @@ RUN		yum -y install /tmp/plexmediaserver-0.9.11.7.803-87d0708.x86_64.rpm
 ADD             plex-ld.conf /etc/ld.so.conf.d/plex-ld.conf
 RUN             /usr/sbin/ldconfig -v
 RUN		mkdir -p "/var/lib/plexmediaserver/Library/Application Support"
-ADD		Preferences.xml "/var/lib/plexmediaserver/Library/Application Support/Plex Media Server/Preferences.xml"
+RUN		mkdir -p /var/lib/plexmediaserver/Library/Application\ Support/Plex\ Media\ Server
+ADD		Preferences.xml /var/lib/plexmediaserver/Library/Application\ Support/Plex\ Media\ Server/Preferences.xml
 ADD 		supervisord.conf /etc/supervisord.conf
 RUN		mkdir -p /uhurunet/tv_series
 RUN		mkdir -p /uhurunet/movies
