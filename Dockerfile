@@ -12,6 +12,8 @@ ENV PLEX_MEDIA_SERVER_TMPDIR=/tmp
 
 ENV	plexconfig /var/lib/plexmediaserver/Library/Application Support/Plex Media Server/
 
+VOLUME	["/usr/lib/plexmediaserver"]
+
 #ENV LC_ALL=en_US.UTF-8
 RUN		yum -y update
 ADD		plexaa /tmp/plexaa
@@ -31,5 +33,5 @@ RUN		mkdir -p /uhurunet/documentaries
 RUN		mkdir -p /uhurunet/music
  
 EXPOSE 22 32400
-ENTRYPOINT ["/usr/bin/supervisord"] 
-#ENTRYPOINT ["/bin/bash"]
+#ENTRYPOINT ["/usr/bin/supervisord"] 
+ENTRYPOINT ["/bin/bash"]
