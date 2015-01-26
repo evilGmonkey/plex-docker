@@ -10,7 +10,7 @@ ENV PLEX_MEDIA_SERVER_HOME=/usr/lib/plexmediaserver
 ENV PLEX_MEDIA_SERVER_MAX_PLUGIN_PROCS=6
 ENV PLEX_MEDIA_SERVER_TMPDIR=/tmp
 
-ENV	plexconfig=/var/lib/plexmediaserver/Library/Application Support/Plex Media Server/
+ENV	plexconfig="/var/lib/plexmediaserver/Library/Application Support/Plex Media Server/"
 
 RUN		yum -y update
 ADD		plexaa /tmp/plexaa
